@@ -2,16 +2,42 @@
 
 :root {
   --page-background-color: #000000;
+
   --section-background-color: #1e1e1f;
+  --section-border-color: #444444;
+  --section-shadow-color: #000000;
+
+  --section-card-background-color: #2c2c2c;
+  --section-card-border-color: #565656;
+  --section-card-shadow-color: #1e1e1f;
+
   --font-color: #ffffff;
   --changing-color: #4d4d4d;
+
+  --contact-form-background-color: #2c2c2c;
+  --contact-form-elements-background-color: #000000;
+  --contact-form-elements-color: #ededed;
+  --contact-form-elements-border-color: #2c2c2c;
 }
 
 .light-mode {
-  --page-background-color: #ffffff;
-  --section-background-color: #ededed;
+  --page-background-color: #e6e6e6;
+
+  --section-background-color: #ffffff;
+  --section-border-color: #c8c5c5;
+  --section-shadow-color: #bebebe;
+
+  --section-card-background-color: #ffffff;
+  --section-card-border-color: #cac9c9;
+  --section-card-shadow-color: #d4d0d0;
+
   --font-color: #000000;
   --changing-color: #37b182;
+
+  --contact-form-background-color: #2c2c2c;
+  --contact-form-elements-background-color: #ffffff;
+  --contact-form-elements-color: #ededed;
+  --contact-form-elements-border-color: #4e4e4e;
 }
 
 * {
@@ -230,6 +256,11 @@ media Query template
   z-index: 1;
 }
 
+.nav-link > a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
 .nav-link:before {
   content: "";
   position: absolute;
@@ -302,8 +333,10 @@ media Query template
   align-items: center;
   margin: 40px auto 50px auto;
   background-color: var(--section-background-color);
-  border: 1px solid #444444;
+  border: 0.4px solid var(--section-border-color);
   border-radius: 25px;
+  box-shadow: 5px 5px 10px var(--section-shadow-color),
+    -5px -5px 10px var(--section-shadow-color);
   padding: 25px;
 }
 
@@ -684,12 +717,14 @@ skills section
  
 ******/
 
-.skill-section {
+.section-aligned {
   width: 90vw;
   margin: 40px auto 50px auto;
   background-color: var(--section-background-color);
-  border: 1px solid #444444;
+  border: 0.4px solid var(--section-border-color);
   border-radius: 25px;
+  box-shadow: 5px 5px 10px var(--section-shadow-color),
+    -5px -5px 10px var(--section-shadow-color);
   padding: 25px;
 }
 
@@ -919,7 +954,7 @@ progress {
   .skills-cards-container {
     grid-gap: 35px;
   }
-  .skill-section {
+  .section-aligned {
     width: 80vw;
     padding: 15px;
   }
@@ -960,10 +995,11 @@ progress {
   display: grid;
   justify-content: center;
   align-items: center;
-  background-color: #d7d7d7;
-  background-color: #2c2c2c;
-  border: 1px solid #565656;
+  background-color: var(--section-card-background-color);
+  border: 0.4px solid var(--section-card-border-color);
   border-radius: 25px;
+  box-shadow: 5px 5px 10px var(--section-card-shadow-color),
+    -5px -5px 10px var(--section-card-shadow-color);
   padding: 12px;
 }
 
@@ -1017,26 +1053,44 @@ progress {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid var(--changing-color);
+  background-color: var(--section-card-background-color);
+  border: 1px solid var(--section-card-border-color);
   border-radius: 25px;
+  background-color: var(--section-card-background-color);
+  border: 0.4px solid var(--section-border-color);
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px var(--section-card-shadow-color),
+    -5px -5px 10px var(--section-card-shadow-color);
   padding: 25px;
   margin-top: 15px;
 }
 
 .contact-form-element {
-  width: 98%;
-  color: #ededed;
-  display: block;
-  background-color: black;
+  width: 100%;
+  color: var(--font-color);
+  background-color: var(--contact-form-elements-background-color);
   outline-style: none;
-  border-style: none;
+  border: 1px solid var(--contact-form-elements-border-color);
   padding: 10px;
   border-radius: 20px;
   margin: 10px 10px 10px 0;
+  box-sizing: border-box;
 }
 
 .name-email-container {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
+  grid-gap: 30px;
+}
+
+@media (max-width: 640px) {
+  .name-email-container {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+  }
 }
