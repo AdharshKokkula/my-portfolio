@@ -86,6 +86,15 @@ body {
   padding: 1px;
 }
 
+.top-bar-icon-link {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
 .top-bar-icon {
   fill: var(--changing-color);
 }
@@ -137,6 +146,11 @@ media Query template
     width: 35px;
   }
 
+  .top-bar-icon-link {
+    height: 35px;
+    width: 35px;
+  }
+
   .top-bar-icon-frame-diff {
     height: 35px;
     width: 35px;
@@ -162,6 +176,11 @@ media Query template
     width: 30px;
   }
 
+  .top-bar-icon-link {
+    height: 30px;
+    width: 30px;
+  }
+
   .top-bar-icon-frame-diff {
     height: 30px;
     width: 30px;
@@ -182,6 +201,11 @@ media Query template
   }
 
   .top-bar-icon-frame {
+    height: 25px;
+    width: 25px;
+  }
+
+  .top-bar-icon-link {
     height: 25px;
     width: 25px;
   }
@@ -256,7 +280,7 @@ media Query template
   z-index: 1;
 }
 
-.nav-link > a {
+.nav-link>a {
   text-decoration: none;
   color: var(--font-color);
 }
@@ -301,6 +325,7 @@ media Query template
   .nabvar {
     gap: 30px;
   }
+
   .nav-link {
     font-size: 16px;
   }
@@ -316,12 +341,13 @@ media Query template
   .nabvar {
     gap: 20px;
   }
+
   .nav-link {
     font-size: 16px;
   }
 }
 
-.nav-link > .active {
+.nav-link>.active {
   text-decoration: underline;
 }
 
@@ -436,6 +462,7 @@ media Query template
   .home-image-svg {
     height: 320px;
   }
+
   .home-image {
     height: 280px;
   }
@@ -457,9 +484,11 @@ media Query template
   .home-image-container {
     order: 1;
   }
+
   .home-image-svg {
     height: 400px;
   }
+
   .home-image {
     height: 350px;
   }
@@ -583,6 +612,7 @@ media Query template
   .about-details-container {
     grid-template-columns: 1fr;
   }
+
   .about-details-hr {
     width: 100%;
   }
@@ -792,15 +822,11 @@ progress {
 }
 
 .circular-bar {
-  background: radial-gradient(
-      closest-side,
+  background: radial-gradient(closest-side,
       var(--section-background-color) 79%,
-      transparent 80% 100%
-    ),
-    conic-gradient(
-      var(--changing-color) calc(var(--progress-value) * 1%),
-      lightgrey 0
-    );
+      transparent 80% 100%),
+    conic-gradient(var(--changing-color) calc(var(--progress-value) * 1%),
+      lightgrey 0);
 }
 
 .python {
@@ -951,13 +977,16 @@ progress {
     grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 40px;
   }
+
   .skills-cards-container {
     grid-gap: 35px;
   }
+
   .section-aligned {
     width: 80vw;
     padding: 15px;
   }
+
   .skill-cards-icon {
     height: 22px;
   }
@@ -977,6 +1006,7 @@ progress {
   .skills-cards-container {
     grid-gap: 35px;
   }
+
   .skill-card-heading {
     font-size: 17px;
   }
@@ -1021,6 +1051,7 @@ progress {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 40px;
   }
+
   .project-card {
     padding: 15px;
   }
