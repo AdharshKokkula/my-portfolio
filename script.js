@@ -45,3 +45,23 @@ function removeTextAreaWhiteSpace() {
   myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g, "");
 }
 removeTextAreaWhiteSpace();
+
+// Scroll Animation
+
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+  const windowheight = window.innerHeight;
+  const revealpoint = 50;
+
+  const reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    const revealtop = reveals[i].getBoundingClientRect().top;
+
+    if (revealtop < windowheight - revealpoint) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
